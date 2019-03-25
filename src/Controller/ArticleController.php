@@ -5,8 +5,9 @@ namespace App\Controller;
 //use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-class ArticleController
+class ArticleController extends AbstractController
 {
     
     /**
@@ -24,6 +25,6 @@ class ArticleController
      **/
     public function show($slug)
     {
-        return new Response(sprintf("New article : %s", $slug));
+       return $this->render('article/show.html.twig', ['title' => $slug]);
     }
 }
