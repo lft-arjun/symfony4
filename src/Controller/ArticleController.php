@@ -19,11 +19,11 @@ class ArticleController
     }
     
     /**
-     * @Route("/news/taste")
+     * @Route("/news/{slug}")
      * 
      **/
-    public function show()
+    public function show($slug)
     {
-        return new Response("New article");
+        return new Response(sprintf("New article : %s", $slug));
     }
 }
